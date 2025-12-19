@@ -139,10 +139,6 @@
             font-weight: 500;
         }
 
-        .duration-info {
-            margin-top: 4px;
-        }
-
         .duration {
             font-size: 18px;
             font-weight: 500;
@@ -159,9 +155,14 @@
 
         .flight-info {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
             margin-top: 20px;
+        }
+        
+        .duration-info {
+            display: flex;
+            align-items: center;
         }
 
         .baggage-info {
@@ -239,10 +240,6 @@
                 <div class="flight-details">
                     <div class="route">AUH → TAS</div>
                     <div class="airline-name">Air Arabia Abu Dhabi</div>
-                    <div class="duration-info">
-                        <span class="duration">03h 30m</span>
-                        <span class="direct-badge">• Direct</span>
-                    </div>
                 </div>
             </div>
             <div class="price-section">
@@ -255,6 +252,10 @@
         </div>
 
         <div class="flight-info">
+            <div class="duration-info">
+                <span class="duration">03h 30m</span>
+                <span class="direct-badge">• Direct</span>
+            </div>
             <div class="baggage-info">
                 <span>Cabin baggage</span>
                 <span class="baggage-icon">🧳</span>
