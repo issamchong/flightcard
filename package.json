@@ -1,0 +1,16 @@
+{
+  "name": "flight-booking-card",
+  "version": "1.0.0",
+  "description": "Flight booking card UI component",
+  "scripts": {
+    "build": "echo 'No build step required for static site'"
+  },
+  "keywords": [
+    "flight",
+    "booking",
+    "ui"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+

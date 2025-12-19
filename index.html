@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .flight-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            max-width: 700px;
+            width: 100%;
+            border: 1px solid #e0e0e0;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .airline-logo {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            box-shadow: 0 2px 8px rgba(255, 68, 68, 0.3);
+            /* The actual logo from the image is a red and white tail fin, but we'll keep the placeholder for now */
+        }
+
+        .flight-time {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .time-display {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .departure-time {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        /* Removed .arrow styles and replaced with .flight-path-icon */
+        .flight-path-icon {
+            width: 36px;
+            height: auto;
+            margin: 0 0px;
+            /* The original icon is an airplane pointing right, so no rotation is needed for the provided image */
+        }
+
+        .arrival-time {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .price-section {
+            text-align: right;
+        }
+
+        .price {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .price-currency {
+            /* This span now acts as a container for the image */
+            margin-right: 5px;
+        }
+
+        .currency-img {
+            height: 42px; /* Slightly smaller than the 32px price text */
+            width: auto;
+            vertical-align: baseline; /* Align with the bottom of the text */
+            margin-bottom: -10px; /* Fine-tune vertical alignment */
+        }
+
+        .trip-type {
+            font-size: 14px;
+            color: #999;
+        }
+
+        .flight-details {
+            margin-bottom: 20px;
+        }
+
+        .route {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .airline-name {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .flight-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .duration {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .direct-badge {
+            display: inline-block;
+            color: #4caf50;
+            font-weight: 600;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        .baggage-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .baggage-icon {
+            font-size: 18px;
+        }
+
+        @media (max-width: 600px) {
+            .flight-card {
+                padding: 20px;
+            }
+
+            .card-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .flight-time {
+                margin-left: 0;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .price-section {
+                text-align: left;
+            }
+
+            .departure-time,
+            .arrival-time,
+            .price {
+                font-size: 24px;
+            }
+
+            .flight-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flight-card">
+        <div class="card-header">
+            <div class="flight-time">
+                <div class="airline-logo">✈</div>
+                <div class="time-display">
+                    <span class="departure-time">9:00 AM</span>
+                    <!-- Replaced the arrow with the recolored airplane image -->
+                    <img src="airplane.png" alt="Flight path icon" class="flight-path-icon">
+                    <span class="arrival-time">1:30 PM</span>
+                </div>
+            </div>
+            <div class="price-section">
+                <div class="price">
+                    <img src="aed-symbol.ico" alt="Currency Symbol" class="currency-img">
+                    10,084
+                </div>
+                <div class="trip-type">Round-trip</div>
+            </div>
+        </div>
+
+        <div class="flight-details">
+            <div class="route">AUH → TAS</div>
+            <div class="airline-name">Air Arabia Abu Dhabi</div>
+        </div>
+
+        <div class="flight-info">
+            <div>
+                <span class="duration">03h 30m</span>
+                <span class="direct-badge">• Direct</span>
+            </div>
+            <div class="baggage-info">
+                <span>Cabin baggage</span>
+                <span class="baggage-icon">🧳</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
