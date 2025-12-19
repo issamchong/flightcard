@@ -35,7 +35,7 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
         }
 
         .airline-logo {
@@ -55,10 +55,16 @@
 
         .flight-time {
             display: flex;
-            align-items: center;
-            gap: 15px;
+            flex-direction: column;
+            gap: 8px;
             flex: 1;
             margin-left: 20px;
+        }
+        
+        .time-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
         .time-display {
@@ -116,41 +122,46 @@
         }
 
         .flight-details {
-            margin-bottom: 20px;
+            margin-top: 8px;
         }
 
         .route {
-            font-size: 16px;
+            font-size: 18px;
             color: #666;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             font-weight: 500;
         }
 
         .airline-name {
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 15px;
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 4px;
             font-weight: 500;
         }
 
-        .flight-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .duration-info {
+            margin-top: 4px;
         }
 
         .duration {
             font-size: 18px;
-            font-weight: 600;
-            color: #1a1a1a;
+            font-weight: 500;
+            color: #666;
         }
 
         .direct-badge {
             display: inline-block;
             color: #4caf50;
             font-weight: 600;
-            font-size: 16px;
-            margin-left: 10px;
+            font-size: 18px;
+            margin-left: 8px;
+        }
+
+        .flight-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
         }
 
         .baggage-info {
@@ -177,6 +188,9 @@
 
             .flight-time {
                 margin-left: 0;
+            }
+            
+            .time-row {
                 flex-direction: column;
                 align-items: flex-start;
             }
@@ -191,6 +205,16 @@
                 font-size: 24px;
             }
 
+            .route,
+            .airline-name,
+            .duration {
+                font-size: 16px;
+            }
+
+            .direct-badge {
+                font-size: 16px;
+            }
+
             .flight-info {
                 flex-direction: column;
                 align-items: flex-start;
@@ -203,12 +227,22 @@
     <div class="flight-card">
         <div class="card-header">
             <div class="flight-time">
-                <div class="airline-logo">✈</div>
-                <div class="time-display">
-                    <span class="departure-time">9:00 AM</span>
-                    <!-- Replaced the arrow with the recolored airplane image -->
-                    <img src="airplane.png" alt="Flight path icon" class="flight-path-icon">
-                    <span class="arrival-time">1:30 PM</span>
+                <div class="time-row">
+                    <div class="airline-logo">✈</div>
+                    <div class="time-display">
+                        <span class="departure-time">9:00 AM</span>
+                        <!-- Replaced the arrow with the recolored airplane image -->
+                        <img src="airplane.png" alt="Flight path icon" class="flight-path-icon">
+                        <span class="arrival-time">1:30 PM</span>
+                    </div>
+                </div>
+                <div class="flight-details">
+                    <div class="route">AUH → TAS</div>
+                    <div class="airline-name">Air Arabia Abu Dhabi</div>
+                    <div class="duration-info">
+                        <span class="duration">03h 30m</span>
+                        <span class="direct-badge">• Direct</span>
+                    </div>
                 </div>
             </div>
             <div class="price-section">
@@ -220,16 +254,7 @@
             </div>
         </div>
 
-        <div class="flight-details">
-            <div class="route">AUH → TAS</div>
-            <div class="airline-name">Air Arabia Abu Dhabi</div>
-        </div>
-
         <div class="flight-info">
-            <div>
-                <span class="duration">03h 30m</span>
-                <span class="direct-badge">• Direct</span>
-            </div>
             <div class="baggage-info">
                 <span>Cabin baggage</span>
                 <span class="baggage-icon">🧳</span>
